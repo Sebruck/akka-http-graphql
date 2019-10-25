@@ -1,4 +1,4 @@
-# Akka HTTP + Sangria GraphQL == 💖
+# Akka HTTP ➕ Sangria GraphQL ＝ 💖
 
 This library allows to easily create a (Sangria GraphQL)[https://sangria-graphql.org]server based on 
 (Akka HTTP)[https://github.com/akka/akka-http].
