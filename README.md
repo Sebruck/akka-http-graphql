@@ -1,7 +1,7 @@
-# Akka HTTP ➕ Sangria GraphQL ＝ 💖
+# Akka HTTP ➕ Sangria GraphQL ➕ Circe ＝ 💖
 
-This library allows to easily create a (Sangria GraphQL)[https://sangria-graphql.org]server based on 
-(Akka HTTP)[https://github.com/akka/akka-http].
+This library allows to easily create a (Sangria GraphQL)[https://sangria-graphql.org] server based on 
+(Akka HTTP)[https://github.com/akka/akka-http] and [circe](https://circe.github.io/circe/).
 
 ## Supported Scala Versions
 Currently only `2.12` is supported, as soon as Sangria is available for `2.13` both will be supported.
