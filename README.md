@@ -1,7 +1,7 @@
 # Akka HTTP ➕ Sangria GraphQL ➕ Circe ＝ 💖
 
-This library allows to easily create a (Sangria GraphQL)[https://sangria-graphql.org] server based on 
-(Akka HTTP)[https://github.com/akka/akka-http] and [circe](https://circe.github.io/circe/).
+This library allows to easily create a [Sangria GraphQL](https://sangria-graphql.org) server based on 
+[Akka HTTP](https://github.com/akka/akka-http) and [circe](https://circe.github.io/circe/).
 
 ## Supported Scala Versions
 Currently only `2.12` is supported, as soon as Sangria is available for `2.13` both will be supported.
@@ -62,7 +62,7 @@ Add the following dependency to your sbt project
   }
 ````
 
-If you have the (GraphQL Playground)[https://github.com/prisma-labs/graphql-playground/blob/master/packages/graphql-playground-html/withAnimation.html]
+If you have the [GraphQL Playground](https://github.com/prisma-labs/graphql-playground/blob/master/packages/graphql-playground-html/withAnimation.html)
 in your `resources` directory, you can now open [http://localhost:8080/graphql](http://localhost:8080/graphql) 
 in your browser and play with your freshly created GraphQL API!
 
