@@ -67,4 +67,4 @@ in your `resources` directory, you can now open [http://localhost:8080/graphql](
 in your browser and play with your freshly created GraphQL API!
 
 ## Contributing
-Contributions and are very welcome!
+Contributions are very welcome!
