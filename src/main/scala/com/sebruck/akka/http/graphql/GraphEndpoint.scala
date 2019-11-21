@@ -10,6 +10,7 @@ import de.heikoseeberger.akkahttpcirce.ErrorAccumulatingCirceSupport._
 import io.circe._
 import io.circe.optics.JsonPath._
 import io.circe.parser._
+import io.circe.syntax._
 import sangria.ast.{Document, OperationType}
 import sangria.execution.deferred.DeferredResolver
 import sangria.execution.{ErrorWithResolver, Executor, QueryAnalysisError}
@@ -121,7 +122,9 @@ class GraphEndpoint[Ctx](
                   val query = queryParam orElse root.query.string.getOption(body)
                   val operationName = operationNameParam orElse root.operationName.string
                     .getOption(body)
-                  val variables = variablesParam orElse root.variables.string.getOption(body)
+                  val variables = variablesParam orElse root.variables.obj
+                    .getOption(body)
+                    .map(_.asJson.noSpaces)
 
                   query match {
                     case None => complete((BadRequest, formatError("No query to execute")))

@@ -98,8 +98,8 @@ class GraphEndpointSpec
 
   it should "accept queries with variables" in {
     val query     = "query TestQuery($theArg: Boolean!) { test(arg: $theArg) }"
-    val variables = """{"theArg":true}"""
-    val body      = Map("query" -> query, "variables" -> variables)
+    val variables = Map("theArg" -> true).asJson
+    val body      = Map("query" -> query.asJson, "variables" -> variables)
 
     Post(Path)
       .withHeaders(acceptJson)
