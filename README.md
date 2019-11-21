@@ -19,7 +19,7 @@ Currently only `2.12` is supported, as soon as Sangria is available for `2.13` b
 Add the following dependency to your sbt project
 
 ```
-"com.github.sebruck" %% "akka-http-graphql" % "0.1"
+"com.github.sebruck" %% "akka-http-graphql" % "0.1.1"
 ```
 
 ````scala
