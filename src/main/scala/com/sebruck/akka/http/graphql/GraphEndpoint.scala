@@ -94,7 +94,7 @@ class GraphEndpoint[Ctx](
       .fold(error => complete((BadRequest, formatError(error))), identity)
 
   val route: Route =
-    optionalHeaderValueByName("X-Apollo-Tracing") { tracing ⇒
+    optionalHeaderValueByName("X-Apollo-Tracing") { tracing =>
       path(graphQLPath) {
         get {
           explicitlyAccepts(`text/html`) {
@@ -105,7 +105,7 @@ class GraphEndpoint[Ctx](
             }
           } ~
             explicitlyAccepts(`application/json`) {
-              parameters(('query, 'operationName.?, 'variables.?)) {
+              parameters(("query", "operationName".?, "variables".?)) {
                 (query, operationName, variables) =>
                   parseAndExecuteGraphQL(HttpMethods.GET,
                                          query,
@@ -116,7 +116,7 @@ class GraphEndpoint[Ctx](
             }
         } ~
           post {
-            parameters(('query.?, 'operationName.?, 'variables.?)) {
+            parameters(("query".?, "operationName".?, "variables".?)) {
               (queryParam, operationNameParam, variablesParam) =>
                 entity(as[Json]) { body =>
                   val query = queryParam orElse root.query.string.getOption(body)

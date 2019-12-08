@@ -4,7 +4,7 @@ This library allows to easily create a [Sangria GraphQL](https://sangria-graphql
 [Akka HTTP](https://github.com/akka/akka-http) and [circe](https://circe.github.io/circe/).
 
 ## Supported Scala Versions
-Currently only `2.12` is supported, as soon as Sangria is available for `2.13` both will be supported.
+The library is published for scala `2.12` and `2.13`.
 
 ## Features
 
@@ -19,7 +19,7 @@ Currently only `2.12` is supported, as soon as Sangria is available for `2.13` b
 Add the following dependency to your sbt project
 
 ```
-"com.github.sebruck" %% "akka-http-graphql" % "0.1.1"
+"com.github.sebruck" %% "akka-http-graphql" % "0.2.0"
 ```
 
 ````scala

@@ -2,27 +2,21 @@ package com.sebruck.akka.http.graphql
 
 import java.net.URLEncoder
 
+import akka.http.scaladsl.model.ContentTypes.`application/json`
 import akka.http.scaladsl.model.headers.{Accept, `Content-Type`}
-import akka.http.scaladsl.model.{
-  ContentType,
-  ContentTypes,
-  HttpCharsets,
-  MediaRanges,
-  MediaType,
-  MediaTypes
-}
-import ContentTypes.`application/json`
+import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.{MalformedHeaderRejection, UnsupportedRequestContentTypeRejection}
 import akka.http.scaladsl.testkit.ScalatestRouteTest
 import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport
 import io.circe.Json
 import io.circe.syntax._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.flatspec.AnyFlatSpec
+import org.scalatest.matchers.should.Matchers
 import sangria.execution.deferred.DeferredResolver
 import sangria.schema.{Field, _}
 
 class GraphEndpointSpec
-    extends FlatSpec
+    extends AnyFlatSpec
     with ScalatestRouteTest
     with Matchers
     with FailFastCirceSupport {
@@ -110,8 +104,8 @@ class GraphEndpointSpec
 
   it should "accept mutations" in {
     val mutation  = "mutation TestMutation($theArg: Boolean!) { mut(arg: $theArg) }"
-    val variables = """{"theArg":false}"""
-    val body      = Map("query" -> mutation, "variables" -> variables)
+    val variables = Map("theArg" -> false).asJson
+    val body      = Map("query" -> mutation.asJson, "variables" -> variables)
 
     Post(Path)
       .withHeaders(acceptJson)

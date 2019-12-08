@@ -1,9 +1,10 @@
 import Dependencies._
 
-ThisBuild / scalaVersion     := "2.12.10"
-ThisBuild / version          := "0.1.2-SNAPSHOT"
-ThisBuild / organization     := "com.github.sebruck"
+ThisBuild / scalaVersion := "2.13.1"
+ThisBuild / version := "0.2.0-SNAPSHOT"
+ThisBuild / organization := "com.github.sebruck"
 ThisBuild / organizationName := "sebruck"
+crossScalaVersions in ThisBuild := Seq("2.13.1", "2.12.10")
 ThisBuild / publishTo := Some(
   if (isSnapshot.value)
     Opts.resolver.sonatypeSnapshots
@@ -16,4 +17,3 @@ lazy val root = (project in file("."))
     name := "akka-http-graphql",
     libraryDependencies ++= dependencies
   )
-
