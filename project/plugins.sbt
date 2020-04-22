@@ -4,4 +4,4 @@ addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat" % "0.1.7")
 
 addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "2.6")
 
-addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.0.0")
+addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.0.1")
