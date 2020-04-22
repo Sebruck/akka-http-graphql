@@ -1,14 +1,15 @@
 import sbt._
 
 object Dependencies {
-  val akkaHttpVersion      = "10.1.11"
-  val akkaVersion          = "2.6.1"
-  val scalaTestVersion     = "3.1.0"
-  val akkaHttpCirceVersion = "1.29.1"
-  val circeVersion         = "0.12.3"
-  val circeOpticsVersion   = "0.12.0"
-  val sangriaVersion       = "2.0.0-M1"
-  val sangriaCirceVersion  = "1.3.0"
+  val akkaHttpVersion       = "10.1.11"
+  val akkaVersion           = "2.6.4"
+  val scalaTestVersion      = "3.1.1"
+  val akkaHttpCirceVersion  = "1.29.1"
+  val circeVersion          = "0.13.0"
+  val circeOpticsVersion    = "0.13.0"
+  val sangriaVersion        = "2.0.0-RC1"
+  val sangriaSlowlogVersion = "2.0.0-M1"
+  val sangriaCirceVersion   = "1.3.0"
 
   lazy val scalaTest = Seq("org.scalatest" %% "scalatest" % scalaTestVersion % Test)
 
@@ -31,7 +32,7 @@ object Dependencies {
   lazy val sangria = Seq(
     "org.sangria-graphql" %% "sangria"         % sangriaVersion,
     "org.sangria-graphql" %% "sangria-circe"   % sangriaCirceVersion,
-    "org.sangria-graphql" %% "sangria-slowlog" % sangriaVersion
+    "org.sangria-graphql" %% "sangria-slowlog" % sangriaSlowlogVersion
   )
 
   lazy val dependencies = scalaTest ++ akka ++ akkaHttpCirce ++ circe ++ sangria
