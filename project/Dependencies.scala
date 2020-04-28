@@ -7,7 +7,7 @@ object Dependencies {
   val akkaHttpCirceVersion  = "1.32.0"
   val circeVersion          = "0.13.0"
   val circeOpticsVersion    = "0.13.0"
-  val sangriaVersion        = "2.0.0-RC1"
+  val sangriaVersion        = "2.0.0-RC2"
   val sangriaSlowlogVersion = "2.0.0-M1"
   val sangriaCirceVersion   = "1.3.0"
 
