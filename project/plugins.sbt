@@ -1,6 +1,6 @@
 addSbtPlugin("com.lucidchart" % "sbt-scalafmt" % "1.16")
 
-addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat" % "0.1.11")
+addSbtPlugin("io.github.davidgregory084" % "sbt-tpolecat" % "0.1.14")
 
 addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "3.9.2")
 
